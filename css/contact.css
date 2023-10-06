@@ -1,0 +1,427 @@
+/* $teal:#00b4cf;
+$white:#ffffff; */
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+} 
+nav{
+  display: flex;
+  height: 85px;
+  width: 100%;
+  background: #1b1b1b;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 50px 0 100px;
+  flex-wrap: wrap;
+  z-index: 10000;
+}
+nav .logo{
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600;
+}
+nav ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+nav ul li{
+  margin: 0 5px;
+}
+nav ul li a{
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+nav ul li a.active,
+nav ul li a:hover{
+  color: #111;
+  background: #fff;
+}
+nav .menu-btn i{
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+input[type="checkbox"]{
+  display: none;
+}
+@media (max-width: 1000px){
+  nav{
+    padding: 0 40px 0 50px;
+  }
+}
+@media (max-width: 920px) {
+  nav .menu-btn i{
+    display: block;
+  }
+  #click:checked ~ .menu-btn i:before{
+    content: "\f00d";
+  }
+  nav ul{
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background: #111;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  #click:checked ~ ul{
+    left: 0;
+  }
+  nav ul li{
+    width: 100%;
+    margin: 40px 0;
+  }
+  nav ul li a{
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  #click:checked ~ ul li a{
+    margin-left: 0px;
+  }
+  nav ul li a.active,
+  nav ul li a:hover{
+    background: none;
+    color: cyan;
+  }
+}
+
+
+
+
+
+
+body {
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  /* height: 100vh; */
+  margin: -20px 0 50px;
+}
+
+.container 
+{
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22);
+  position: relative;
+  overflow: hidden;
+  width: 768px;
+  max-width: 100%;
+  min-height: 480px;
+  min-width: 370px;
+  margin-top: 7%;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.form-container {
+  display: flex;
+}
+
+.left-container {
+  flex: 1;
+  height: 480px;
+  background-color: #4A6546;
+}
+
+.right-container {
+  display: flex;
+  flex: 1;
+  height: 10px;
+  background-color: #FFFFFF;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-container {
+  display: flex;
+  flex: 1;
+  height: 480px;
+  justify-content: center;
+  align-items: center;
+  color: #FFFFFF;
+}
+
+.left-container p {
+  font-size: 0.9rem;
+}
+
+.right-inner-container {
+  width: 70%;
+  height: 80%;
+  text-align: center;
+}
+
+.left-inner-container {
+  height: 50%;
+  width: 80%;
+  text-align: center;
+  line-height: 22px;
+}
+
+input,
+textarea {
+  background-color: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+  font-size: 0.8rem;
+}
+
+input:focus,
+textarea:focus {
+  outline: 1px solid #00b4cf;
+}
+
+button {
+  border-radius: 20px;
+  border: 1px solid #00b4cf;
+  background-color: #00b4cf;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.7;
+}
+
+@media only screen and (max-width: 600px) {
+  .left-container {
+    display: none;
+  }
+
+  .lg-view {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .sm-view {
+    display: none;
+  }
+}
+
+form p {
+  text-align: left;
+}
+
+
+.con
+{
+  width: 70%;
+  background-color: #FFFFFF;
+  margin-top: 10%;
+}
+
+
+/* Style for the entire FAQ container */
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: left;
+  background-color: #FFFFFF; /* Light gray background */
+}
+
+/* FAQ question styles */
+.faq-item {
+  margin-bottom: 20px;
+  background-color: #fff; /* White background */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.question {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000000; /* Blue color */
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.question:hover {
+  color: #0056b3; /* Darker blue on hover */
+}
+
+/* FAQ answer styles */
+.answer {
+  display: none;
+  font-size: 16px;
+  margin-top: 10px;
+  color: #333; /* Dark text color */
+}
+
+/* Animation for FAQ items */
+.faq-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Animation for revealing answers */
+.visible {
+  display: block;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+/* Your existing CSS styles remain the same */
+
+/* Add a "+" icon for questions */
+.question::before {
+  content: "+";
+  display: inline-block;
+  margin-right: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Rotate the "+" icon when the answer is visible */
+.question.expanded::before {
+  transform: rotate(45deg);
+}
+
+
+/* Your existing CSS styles remain the same */
+
+/* Add a smooth transition for expanding and collapsing answers */
+.faq-item {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.question.expanded::before {
+  transform: rotate(45deg);
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Style for the smooth scroll target of opened answers */
+.answer.visible {
+  scroll-margin-top: 20px; /* Add some space above the answer after opening */
+}
+
+
+footer {
+  /* background-color: #032548ae; */
+  /* background-color: #FFBF23; */
+  background-color: #FFFFFF;
+  color: black;
+  padding: 20px;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  display: block;
+  
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-content p {
+  margin-bottom: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+}
+
+.social-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.social-links li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.social-links a {
+  color: black;
+  font-size: 20px;
+}
+
+.social-links a:hover {
+  color: red;
+}
+
+
+  /* Define scrollbar styles for webkit-based browsers (Chrome, Safari) */
+  ::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+    background-color: #f5f5f5; /* Background color of the scrollbar track */
+    
+  }
+  
+  /* Define scrollbar thumb (the draggable part) */
+  ::-webkit-scrollbar-thumb {
+    background-color: #92BE2D; /* Color of the scrollbar thumb */
+    border-radius: 5px; /* Rounded corners for the thumb */
+  }
+  
+  /* Define scrollbar track (the non-draggable part) */
+  ::-webkit-scrollbar-track {
+    background-color: #f5f5f5; /* Color of the scrollbar track */
+  }
+  
+  /* Define scrollbar corner (between vertical and horizontal scrollbars) */
+  ::-webkit-scrollbar-corner {
+    background-color: #f5f5f5; /* Color of the scrollbar corner */
+  }
+  
+  /* Define scrollbar thumb when hovered */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #92BE2D; /* Color of the scrollbar thumb on hover */
+  }
+  
+  /* Define scrollbar thumb when active (being dragged) */
+  ::-webkit-scrollbar-thumb:active {
+    background-color: #003366; /* Color of the scrollbar thumb when active */
+  }
+  

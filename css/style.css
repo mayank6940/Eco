@@ -1,0 +1,420 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700);
+
+
+
+/* yeha seeeeeeeeeeeeeeeeeeeeeeeeeee */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+} 
+nav{
+  display: flex;
+  height: 80px;
+  width: 100%;
+  background: #1b1b1b;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px 0 100px;
+  flex-wrap: wrap;
+  z-index: 10000;
+}
+nav .logo{
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600;
+}
+nav ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+nav ul li{
+  margin: 0 5px;
+}
+nav ul li a{
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+nav ul li a.active,
+nav ul li a:hover{
+  color: #111;
+  background: #fff;
+}
+nav .menu-btn i{
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+input[type="checkbox"]{
+  display: none;
+}
+@media (max-width: 1000px){
+  nav{
+    padding: 0 40px 0 50px;
+  }
+}
+@media (max-width: 920px) {
+  nav .menu-btn i{
+    display: block;
+  }
+  #click:checked ~ .menu-btn i:before{
+    content: "\f00d";
+  }
+  nav ul{
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background: #111;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  #click:checked ~ ul{
+    left: 0;
+  }
+  nav ul li{
+    width: 100%;
+    margin: 40px 0;
+  }
+  nav ul li a{
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  #click:checked ~ ul li a{
+    margin-left: 0px;
+  }
+  nav ul li a.active,
+  nav ul li a:hover{
+    background: none;
+    color: cyan;
+  }
+}
+
+
+/* Basic styles for the container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 50px auto 0;  
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+/* Styles for the content div (text and image) */
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Styles for the text on the left side */
+.text {
+  flex: 1;
+  padding: 60px;
+  background-color: #ffffff;
+  font-family: 'Inter';
+  /* margin-right: 0%; */
+}
+
+/* Styles for the highlighted heading */
+.text h2 {
+  font-family: 'Inter';
+  font-weight: 800;
+  line-height: 50px;
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: #333;
+  text-transform: uppercase;
+ 
+}
+
+/* Highlighted text */
+.highlight {
+  color: #007bff;
+}
+
+.text p {
+  font-size: 19px;
+  line-height: 1.5;
+  color: #555;
+  /* font-family: 'Inter'; */
+}
+
+/* Styles for the image on the right side */
+.image {
+  flex: 1;
+  text-align: right;
+  display: block;
+  position: relative;
+  margin-top: 20px;
+  z-index: -1;
+  /* margin-left: 0%; */
+   /* Add margin to create space between image and text */ 
+}
+
+.image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgba(122, 189, 144, 0.9);
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .content {
+      flex-direction: column; /* Stack text and image on smaller screens */
+      align-items: flex-start; /* Align text and image to the left */
+  }
+
+  .image {
+      margin-top: 10px; /* Add a smaller margin for space */
+  }
+}
+span
+{
+  color: #98DE5B;
+}
+
+
+header {
+  text-align: center;
+  /* margin-top: 20px; */
+  position: static;
+  margin-top: 12%;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #333; /* Title color */
+  font-family: 'Space Grotesk';
+  font-weight: 800;
+}
+
+
+/* card view start here  */
+
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background-color: #fff;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  /* box-shadow: 15px 15px 10px rgba(62, 66, 63, 0.3); */
+  border-radius: 12px; /* Added border-radius */
+  overflow: hidden;
+  max-width: 300px; /* Adjust as needed */
+  width: calc(33.33% - 20px); /* Adjust for spacing between cards */
+  text-align: center;
+  margin: 30px; /* Added margin for spacing between cards */
+  /* margin-top: 20%; */
+  transition: transform 0.2s ease-in-out;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card h3 {
+  margin: 20px 0;
+  font-size: 1.5rem;
+}
+
+.card p {
+  margin: 0 20px 20px;
+}
+
+.card a {
+  display: block;
+  padding: 10px 0;
+  background-color: #007BFF;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.card a:hover {
+  background-color: #0056b3;
+}
+
+
+/* Style the container */
+.map-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: 30px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+/* Style the map section */
+.map {
+  flex: 1;
+  /* height: 300px; Adjust the height as needed */
+  background-color: #ffffff; /* Placeholder color */
+  /* overflow: hidden; */
+}
+
+/* Style the text section */
+.m-text {
+  flex: 1;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+/* Add media query for responsiveness */
+@media (max-width: 768px) {
+  .container {
+      flex-direction: column;
+  }
+
+  .map, .m-text {
+      flex: 1;
+      width: 100%;
+      margin-bottom: 20px;
+  }
+}
+
+
+/* footer */
+footer {
+  /* background-color: #032548ae; */
+  /* background-color: #FFBF23; */
+  background-color: #F6FAF5;
+  box-shadow: 15px 15px 10px rgba(150, 155, 151, 0.1);
+  color: black;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-content p {
+  margin-bottom: 10px;
+}
+
+.social-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.social-links li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.social-links a {
+  color: black;
+  font-size: 20px;
+}
+
+.social-links a:hover {
+  color: red;
+}
+
+
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4A6546; /* Button background color */
+  color: #fff; /* Button text color */
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Hover effect for the button */
+.button:hover {
+  background-color: #0056b3; /* Hover background color */
+}
+
+
+
+
+
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .card {
+      width: calc(50% - 20px); /* Two cards per row on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+      width: 100%; /* Single card per row on the smallest screens */
+  }
+}
+
+
+
+
+
+
+::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+  background-color: #f5f5f5; /* Background color of the scrollbar track */
+  
+}
+
+/* Define scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background-color: #92BE2D; /* Color of the scrollbar thumb */
+  border-radius: 5px; /* Rounded corners for the thumb */
+}
+
+/* Define scrollbar track (the non-draggable part) */
+::-webkit-scrollbar-track {
+  background-color: #f5f5f5; /* Color of the scrollbar track */
+}
+
+/* Define scrollbar corner (between vertical and horizontal scrollbars) */
+::-webkit-scrollbar-corner {
+  background-color: #f5f5f5; /* Color of the scrollbar corner */
+}
+
+/* Define scrollbar thumb when hovered */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #92BE2D; /* Color of the scrollbar thumb on hover */
+}
+
+/* Define scrollbar thumb when active (being dragged) */
+::-webkit-scrollbar-thumb:active {
+  background-color: #003366; /* Color of the scrollbar thumb when active */
+}
